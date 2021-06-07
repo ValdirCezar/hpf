@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Para trabalhar com formulários no Angular 12
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 // Imports para componentes do Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -35,6 +38,9 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    // Forms
+    FormsModule,
+    ReactiveFormsModule,
     // Angular Material
     MatToolbarModule,
     MatSidenavModule,
