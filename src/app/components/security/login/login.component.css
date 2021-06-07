@@ -1,0 +1,36 @@
+.login {
+  height: 100%;
+  background: linear-gradient(0deg, rgba(5,246,249,1) 0%, rgba(45,94,253,1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  width: 30rem;
+  margin: auto;
+  background-color: rgb(235, 228, 228);
+  padding: 4rem 1rem;
+  border-radius: 1rem;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(66, 65, 65);
+}
+
+img {
+  height: 15rem;
+  width: 100%;
+  margin: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
