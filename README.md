@@ -1,27 +1,25 @@
 # Helpdesk
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3
 
-## Development server
+## Pré-requisito para inicira uma aplicação Angular 12
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Instalar Node.js [Node.js](https://nodejs.org/en/) na versão LTS
+Instalar o Angular CLI `npm install -g @angular/cli@12.0.3` após a instalação do Node.js
 
-## Code scaffolding
+## Iniciar uma aplicação Angular 12
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dentro da pasta que deseja criar o projeto abrir um Gitbash ou powershell e digitar o camando
+`ng new nome-do-seu-projeto`
 
-## Build
+## Subir a aplicação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Rode `ng serve` para servir o projeto. Navegue para `http://localhost:4200/` em seu navegador
 
-## Running unit tests
+## Gerar um novo componente
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`ng generate component nome-do-component`
 
-## Running end-to-end tests
+## Adicionar Angular Material no projeto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`ng add @angular/material`
