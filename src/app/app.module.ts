@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Para trabalhar com formulários no Angular 12
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // Imports para componentes do Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -41,6 +42,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     // Forms
     FormsModule,
     ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
     // Angular Material
     MatToolbarModule,
     MatSidenavModule,
