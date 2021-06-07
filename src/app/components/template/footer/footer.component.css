@@ -1,0 +1,14 @@
+.footer {
+  height: 8%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  border: 1px solid rgb(206, 202, 202);
+  padding: .2rem 7rem;
+  box-shadow: 2px 2px 5px rgb(161, 159, 159);
+}
