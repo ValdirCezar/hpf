@@ -1,0 +1,12 @@
+.header {
+  height: 10%;
+  box-shadow: 2px 2px 5px rgb(161, 159, 159);
+  background-color: rgb(238, 235, 235);
+}
+
+h3 {
+  margin: auto;
+  border: 1px solid rgb(206, 202, 202);
+  padding: .5rem 7rem;
+  box-shadow: 2px 2px 5px rgb(161, 159, 159);
+}
