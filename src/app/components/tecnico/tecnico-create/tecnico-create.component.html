@@ -54,6 +54,6 @@
     </mat-form-field>
 
     <button [disabled]="!validaCampos()" mat-stroked-button class="mat-elevation-z4" color="primary">Criar</button>
-    <button mat-stroked-button class="mat-elevation-z4" color="warn">Cancelar</button>
+    <button (click)="cancel()" mat-stroked-button class="mat-elevation-z4" color="warn">Cancelar</button>
   </form>
 </div>

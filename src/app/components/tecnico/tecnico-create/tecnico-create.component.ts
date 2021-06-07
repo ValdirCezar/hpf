@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Tecnico } from 'src/app/models/tecnico';
 
 @Component({
@@ -24,9 +25,15 @@ export class TecnicoCreateComponent implements OnInit {
   email = new FormControl(null, [Validators.email])
   senha = new FormControl(null, [Validators.minLength(3)])
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  cancel(): void {
+    this.router.navigate([''])
   }
 
   addPerfil(perfil: any): void {
