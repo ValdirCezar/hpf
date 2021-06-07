@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 // Imports para componentes do Angular Material
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -52,6 +53,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     MatCardModule,
     MatInputModule,
     MatRadioModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

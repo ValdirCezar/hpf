@@ -9,17 +9,10 @@ img {
   margin: auto;
 }
 
-.radio {
-  margin-bottom: 1rem;
-}
-
-mat-radio-group {
+.section {
+  margin-bottom: 1rem;  
   display: flex;
   justify-content: space-between;
-}
-
-#admin {
-  margin-right: 2rem;
 }
 
 .full-width {

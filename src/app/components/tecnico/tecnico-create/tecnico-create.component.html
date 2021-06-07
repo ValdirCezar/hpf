@@ -2,31 +2,58 @@
   <form class="form">
     <img src="assets/img/tecnico-create.svg" alt="Tecnico create">
 
-    <div class="radio">
-      <mat-radio-group aria-label="Selecione uma opção">
-        <mat-radio-button id="admin" value="0">Admin</mat-radio-button>
-        <mat-radio-button value="1">Técnico</mat-radio-button>
-      </mat-radio-group>
-    </div>
+    <section class="section">
+      <mat-checkbox (click)="addPerfil(0)">Admin</mat-checkbox>
+      <mat-checkbox (click)="addPerfil(1)">Cliente</mat-checkbox>
+      <mat-checkbox (click)="addPerfil(2)">Técnico</mat-checkbox>
+    </section>
 
     <mat-form-field class="full-width">
       <mat-label>Nome</mat-label>
-      <input matInput placeholder="Ex. Valdir Cezar">
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-label>CPF</mat-label>
-      <input matInput placeholder="Ex. 000.000.000-00" mask="000.000.000-00">
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-label>E-mail</mat-label>
-      <input matInput placeholder="Ex. fulano@email.com">
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-label>Senha</mat-label>
-      <input type="password" matInput placeholder="Ex. 123">
+      <input 
+      [(ngModel)]="tecnico.nome"
+      name="nome"
+      [formControl]="nome"
+      required
+      matInput 
+      placeholder="Ex. Valdir Cezar">
     </mat-form-field>
 
-    <button mat-stroked-button class="mat-elevation-z4" color="primary">Criar</button>
+    <mat-form-field class="full-width">
+      <mat-label>CPF</mat-label>
+      <input 
+      [(ngModel)]="tecnico.cpf"
+      name="cpf"
+      [formControl]="cpf"
+      required
+      matInput p
+      laceholder="Ex. 000.000.000-00" 
+      mask="000.000.000-00">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input 
+      [(ngModel)]="tecnico.email"
+      name="email"
+      [formControl]="email"
+      required
+      matInput 
+      placeholder="Ex. fulano@email.com">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Senha</mat-label>
+      <input 
+      [(ngModel)]="tecnico.senha"
+      name="senha"
+      [formControl]="senha"
+      required
+      type="password" 
+      matInput placeholder="Ex. 123">
+    </mat-form-field>
+
+    <button [disabled]="!validaCampos()" mat-stroked-button class="mat-elevation-z4" color="primary">Criar</button>
     <button mat-stroked-button class="mat-elevation-z4" color="warn">Cancelar</button>
   </form>
 </div>
