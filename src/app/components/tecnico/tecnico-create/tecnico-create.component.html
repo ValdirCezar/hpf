@@ -1,1 +1,32 @@
-<p>tecnico-create works!</p>
+<div class="container">
+  <form class="form">
+    <img src="assets/img/tecnico-create.svg" alt="Tecnico create">
+
+    <div class="radio">
+      <mat-radio-group aria-label="Selecione uma opção">
+        <mat-radio-button id="admin" value="0">Admin</mat-radio-button>
+        <mat-radio-button value="1">Técnico</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <mat-form-field class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Ex. Valdir Cezar">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>CPF</mat-label>
+      <input matInput placeholder="Ex. 000.000.000-00">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="Ex. fulano@email.com">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Senha</mat-label>
+      <input type="password" matInput placeholder="Ex. 123">
+    </mat-form-field>
+
+    <button mat-stroked-button class="mat-elevation-z4" color="primary">Criar</button>
+    <button mat-stroked-button class="mat-elevation-z4" color="warn">Cancelar</button>
+  </form>
+</div>

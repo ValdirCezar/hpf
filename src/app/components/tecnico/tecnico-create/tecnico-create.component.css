@@ -1,0 +1,32 @@
+.container {
+  width: 25rem;
+  margin: auto;
+}
+
+img {
+  height: 8rem;
+  width: 100%;
+  margin: auto;
+}
+
+.radio {
+  margin-bottom: 1rem;
+}
+
+mat-radio-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+#admin {
+  margin-right: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-top: .5rem;
+}
