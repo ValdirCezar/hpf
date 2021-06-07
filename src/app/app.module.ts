@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 
+// Para realizar requisições HTTP
+import { HttpClientModule } from '@angular/common/http';
+
 // Imports para componentes do Angular Material
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,6 +29,7 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { LoginComponent } from './components/security/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     FooterComponent,
     NavComponent,
     HomeComponent,
-    TecnicoCreateComponent
+    TecnicoCreateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,8 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     FormsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
+    // Requisições http
+    HttpClientModule,
     // Angular Material
     MatToolbarModule,
     MatSidenavModule,
