@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   constructor(private storage: StorageService) { }
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     let localUser = this.storage.getLocalUser();
 

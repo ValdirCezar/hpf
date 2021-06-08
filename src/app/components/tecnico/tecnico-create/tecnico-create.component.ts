@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Tecnico } from 'src/app/models/tecnico';
+import { MessageService } from 'src/app/services/message.service';
+import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
   selector: 'app-tecnico-create',
@@ -26,10 +28,21 @@ export class TecnicoCreateComponent implements OnInit {
   senha = new FormControl(null, [Validators.minLength(3)])
 
   constructor(
-    private router: Router
+    private router: Router,
+    private service: TecnicoService,
+    private message: MessageService
   ) { }
 
   ngOnInit(): void {
+  }
+
+  create() {
+    this.service.create(this.tecnico).subscribe(response => {
+      this.message.message('Técnico cadastrado com sucesso!!');
+    }, err => {
+      console.log(err);
+      this.message.message(err.error.error);
+    })
   }
 
   cancel(): void {

@@ -13,6 +13,7 @@ import { NgxMaskModule } from 'ngx-mask'
 import { HttpClientModule } from '@angular/common/http';
 
 // Imports para componentes do Angular Material
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -24,13 +25,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 
 // Componentes do projeto
+import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
-import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { LoginComponent } from './login/login.component';
-import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     MatInputModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatSnackBarModule,
   ],
   providers: [
     AuthInterceptorProvider
