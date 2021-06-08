@@ -12,3 +12,9 @@ span {
   border-radius: 1rem;
   padding: 0 3rem;
 }
+
+@media (max-height: 740px){
+  .footer {
+    display: none;
+  }
+}
