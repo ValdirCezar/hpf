@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { API_CONFIG } from '../config/api.config';
 import { Credenciais } from '../models/credenciais';
 import { LocalUser } from '../models/local_user';
 import { StorageService } from './storage.service';
@@ -10,7 +11,7 @@ import { StorageService } from './storage.service';
 })
 export class AuthService {
 
-  BASE_URL = environment.baseUrl;
+  BASE_URL = API_CONFIG.baseUrl;
 
   constructor(
     private http: HttpClient,
