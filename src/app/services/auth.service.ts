@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { environment } from 'src/environments/environment';
 import { API_CONFIG } from '../config/api.config';
 import { Credenciais } from '../models/credenciais';
 import { LocalUser } from '../models/local_user';
