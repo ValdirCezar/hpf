@@ -3,19 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/security/login/login.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { NavComponent } from './components/template/nav/nav.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
+    path: '', component: NavComponent,
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'tecnicos/create', component: TecnicoCreateComponent }
+    ]
   },
   {
-    path: '',
+    path: 'login',
     component: LoginComponent
-  },
-  {
-    path: 'tecnicos/create',
-    component: TecnicoCreateComponent
   }
 ];
 
