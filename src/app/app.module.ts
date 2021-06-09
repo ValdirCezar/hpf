@@ -35,6 +35,7 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
     TecnicoCreateComponent,
     LoginComponent,
     TecnicoListComponent,
+    TecnicoUpdateComponent,
   ],
   imports: [
     BrowserModule,
