@@ -1,3 +1,4 @@
+import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -11,14 +12,15 @@ import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecn
 
 const routes: Routes = [
   {
-    path: '', component: NavComponent, canActivate: [AuthGuard], children: 
-    [
-      { path: 'home', component: HomeComponent },
-      { path: 'tecnicos', component: TecnicoListComponent},
-      { path: 'tecnicos/create', component: TecnicoCreateComponent },
-      { path: 'tecnicos/update/:id', component: TecnicoUpdateComponent },
-      { path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent }
-    ]
+    path: '', component: NavComponent, canActivate: [AuthGuard], children:
+      [
+        { path: 'home', component: HomeComponent },
+        { path: 'tecnicos', component: TecnicoListComponent },
+        { path: 'tecnicos/create', component: TecnicoCreateComponent },
+        { path: 'tecnicos/update/:id', component: TecnicoUpdateComponent },
+        { path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent },
+        { path: 'clientes', component: ClienteListComponent }
+      ]
   },
   {
     path: 'login',
