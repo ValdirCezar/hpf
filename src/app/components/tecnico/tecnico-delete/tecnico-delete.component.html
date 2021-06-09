@@ -1,1 +1,48 @@
-<p>tecnico-delete works!</p>
+<div class="container">
+  <form class="form">
+
+    <h1>Deletando Técnico</h1>
+
+    <img src="assets/img/tecnico-create.svg" alt="Tecnico create">
+
+    <mat-form-field class="full-width">
+      <mat-label>Nome</mat-label>
+      <input 
+      [(ngModel)]="tecnico.nome"
+      name="nome"
+      [disabled]="true"
+      matInput >
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>CPF</mat-label>
+      <input 
+      [(ngModel)]="tecnico.cpf"
+      name="cpf"
+      [disabled]="true"
+      matInput >
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input 
+      [(ngModel)]="tecnico.email"
+      name="email"
+      [disabled]="true"
+      matInput >
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Senha</mat-label>
+      <input 
+      [(ngModel)]="tecnico.senha"
+      name="senha"
+      [disabled]="true"
+      type="password"
+      matInput >
+    </mat-form-field>
+
+    <button (click)="delete()" mat-stroked-button class="mat-elevation-z4" color="primary">Deletar</button>
+    <button (click)="cancel()" mat-stroked-button class="mat-elevation-z4" color="warn">Cancelar</button>
+  </form>
+</div>
