@@ -5,12 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { AuthGuard } from './guard/auth.guard';
+import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 
 const routes: Routes = [
   {
     path: '', component: NavComponent, canActivate: [AuthGuard], children: 
     [
       { path: 'home', component: HomeComponent },
+      { path: 'tecnicos', component: TecnicoListComponent},
       { path: 'tecnicos/create', component: TecnicoCreateComponent }
     ]
   },
