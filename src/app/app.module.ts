@@ -13,11 +13,13 @@ import { NgxMaskModule } from 'ngx-mask'
 import { HttpClientModule } from '@angular/common/http';
 
 // Imports para componentes do Angular Material
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -66,6 +68,8 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
     MatRadioModule,
     MatCheckboxModule,
     MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [
     AuthInterceptorProvider

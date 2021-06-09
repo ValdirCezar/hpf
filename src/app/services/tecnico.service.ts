@@ -12,7 +12,12 @@ export class TecnicoService {
 
   constructor(private http: HttpClient) { }
 
+  findAll(): Observable<Tecnico[]> {
+    return this.http.get<Tecnico[]>(API_CONFIG.baseUrl + '/tecnicos');
+  }
+
   create(tecnico: Tecnico): Observable<any> {
     return this.http.post<any>(`${API_CONFIG.baseUrl}/tecnicos`, tecnico);
   }
+
 }

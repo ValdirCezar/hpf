@@ -46,7 +46,7 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate([''])
+    this.router.navigate(['tecnicos'])
   }
 
   addPerfil(perfil: any): void {
