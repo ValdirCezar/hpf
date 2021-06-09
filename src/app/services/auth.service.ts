@@ -19,6 +19,16 @@ export class AuthService {
     private http: HttpClient,
     private storage: StorageService) { }
 
+  isAuthenticated() : boolean {
+    let user = this.storage.getLocalUser();
+
+    if(user != null) {
+      return this.jwtService.isTokenExpired(user.token.toString()) ? false : true; 
+    }
+
+    return false;
+  }
+
   public authenticate(creds: Credenciais) {
     return this.http.post(`${this.BASE_URL}/login`, creds, {
       observe: 'response',

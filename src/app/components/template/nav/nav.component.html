@@ -4,7 +4,7 @@
   <mat-drawer #drawer class="sidenav mat-elevation-z8" mode="side">
     <img src="assets/img/side-image.svg" alt="">
     <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink="/">
+      <a mat-list-item routerLink="home">
         <i class="material-icons">home</i>
         Home
       </a>
@@ -24,7 +24,7 @@
         <i class="material-icons sair">code</i>
         Github
       </a>
-      <a mat-list-item routerLink="/">
+      <a mat-list-item routerLink="/login" (click)="logout()">
         <i class="material-icons sair">logout</i>
         Logout
       </a>
