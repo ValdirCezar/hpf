@@ -46,7 +46,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Ações </th>
       <td mat-cell *matCellDef="let element">
-        <a routerLink="../chamados">
+        <a routerLink="{{ element.id }}">
           <i id="view" class="material-icons">visibility</i>
         </a>
         <a routerLink="update/{{ element.id }}">
