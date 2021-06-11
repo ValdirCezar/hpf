@@ -45,6 +45,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ChamadoEditComponent } from './components/chamado/chamado-edit/chamado-edit.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { ChamadoCreateComponent } from './components/chamado/chamado-create/cham
     ClienteDeleteComponent,
     ChamadoListComponent,
     ChamadoCreateComponent,
+    ChamadoEditComponent,
   ],
   imports: [
     BrowserModule,
