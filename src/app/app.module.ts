@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,12 +14,14 @@ import { NgxMaskModule } from 'ngx-mask'
 import { HttpClientModule } from '@angular/common/http';
 
 // Imports para componentes do Angular Material
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
@@ -41,7 +44,6 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './login/login.component';
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 
 @NgModule({
@@ -86,9 +88,11 @@ import { ChamadoCreateComponent } from './components/chamado/chamado-create/cham
     MatSnackBarModule,
     MatTableModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [
-    AuthInterceptorProvider
+    AuthInterceptorProvider,
   ],
   bootstrap: [AppComponent]
 })

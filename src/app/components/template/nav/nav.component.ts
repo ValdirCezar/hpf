@@ -12,7 +12,7 @@ export class NavComponent implements OnInit {
   constructor(private storage: StorageService, private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate(['home'])
+    this.router.navigate(['/chamados/create'])
   }
 
   logout() {
