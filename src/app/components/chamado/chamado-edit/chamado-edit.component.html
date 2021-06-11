@@ -1,1 +1,75 @@
-<p>chamado-edit works!</p>
+<div class="container mat-elevation-z8">
+  <h1>Atualizando chamado</h1>
+
+  <img class="full-width" src="./assets/img/create-chamado.svg" alt="Help Desk">
+
+  <form>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Título</mat-label>
+      <input 
+      [formControl]="titulo"
+      required
+      [(ngModel)]="chamado.titulo" 
+      name="titulo" 
+      type="text" 
+      maxlength="70" 
+      matInput 
+      placeholder="Ex. Troca de bateria">
+    </mat-form-field>
+  </form>
+
+  <div class="priordade-status">
+    <mat-form-field class="half-width" appearance="outline">
+      <mat-label>PRIORIDADE {{ retornaPrioridade() }}</mat-label>
+      <mat-select [(ngModel)]="chamado.prioridade" class="select">
+        <mat-option value="0">BAIXA</mat-option>
+        <mat-option value="1">MEDIA</mat-option>
+        <mat-option value="2">ALTA</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field class="half-width" appearance="outline">
+      <mat-label>STATUS {{ retornaStatus() }}</mat-label>
+      <mat-select [(ngModel)]="chamado.status" class="select">
+        <mat-option value="0">ABERTO</mat-option>
+        <mat-option value="1">ANDAMENTO</mat-option>
+        <mat-option value="2">ENCERRADO</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Cliente: {{ nomeDoCliente }}</mat-label>
+    <mat-select disabled [(ngModel)]="chamado.cliente" class="select">
+      <mat-option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{ cliente.nome }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Técnico: {{ nomeDoTecnico }}</mat-label>
+    <mat-select [(ngModel)]="chamado.tecnico" class="select">
+      <mat-option *ngFor="let tecnico of tecnicos" value="{{ tecnico.id }}">{{ tecnico.nome }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <form>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Descrição do chamado</mat-label>
+      <textarea 
+      [formControl]="descricao"
+      required
+      [(ngModel)]="chamado.descricao" 
+      name="descricao" 
+      class="descricao" 
+      maxlength="254" 
+      matInput 
+      placeholder="Ex. Usuário solicita a troca de bateria..."></textarea>
+    </mat-form-field>
+  </form>
+
+  <button [disabled]="!validaCampos()" (click)="update()" class="mat-elevation-z2 full-width" mat-stroked-button color="primary">Atualizar</button>
+  <button routerLink="../../" class="mat-elevation-z2 full-width" mat-stroked-button color="accent">Cancelar</button>
+
+  <p class="full-width">Desenvolvido por Valdir Cezar</p>
+
+</div>

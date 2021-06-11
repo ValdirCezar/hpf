@@ -53,18 +53,18 @@ export class ChamadoListComponent implements OnInit {
   }
 
   prioridade(x : String) {
-    if(x == '1')
+    if(x == '0')
       return 'BAIXA'
-    else if (x =='2')
+    else if (x =='1')
       return 'MÉDIA'
     else
       return 'ALTA'
   }
 
   status(x : String) {
-    if(x == '1')
+    if(x == '0')
       return 'ABERTO'
-    else if (x =='2')
+    else if (x =='1')
       return 'EM ANDAMENTO'
     else
       return 'ENCERRADO'
