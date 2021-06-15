@@ -1,3 +1,5 @@
+import { MessageService } from './../services/message.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -12,10 +14,14 @@ import { StorageService } from '../services/storage.service';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private storage: StorageService) { }
+  jwtHelper: JwtHelperService = new JwtHelperService();
+
+  constructor(
+    private storage:       StorageService, 
+    public messageService: MessageService, 
+    ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     let localUser = this.storage.getLocalUser();
 
     if (localUser) {

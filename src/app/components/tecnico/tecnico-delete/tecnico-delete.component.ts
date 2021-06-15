@@ -11,20 +11,20 @@ import { Tecnico } from 'src/app/models/tecnico';
 export class TecnicoDeleteComponent implements OnInit {
 
   tecnico: Tecnico = {
-    id: '',
-    nome: '',
-    cpf: '',
-    email: '',
-    senha: '',
-    perfis: [],
-    dataCriacao: ''
+    id:          '',
+    nome:        '',
+    cpf:         '',
+    email:       '',
+    senha:       '',
+    perfis:      [],
+    dataCriacao: '',
   }
 
   constructor(
-    private router: Router,
+    private router:          Router,
     private service: TecnicoService,
     private message: MessageService,
-    private route: ActivatedRoute
+    private route:   ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +34,6 @@ export class TecnicoDeleteComponent implements OnInit {
 
   findById() {
     this.service.findById(this.tecnico.id).subscribe(response => {
-      console.log(response.senha);
       this.tecnico = response;
     })
   }
@@ -49,7 +48,7 @@ export class TecnicoDeleteComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['tecnicos'])
+    this.router.navigate(['tecnicos']);
   }
 
 }

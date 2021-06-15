@@ -13,25 +13,25 @@ import { MessageService } from 'src/app/services/message.service';
 export class ClienteUpdateComponent implements OnInit {
 
   cliente: Cliente = {
-    id: '',
-    nome: '',
-    cpf: '',
-    email: '',
-    senha: '',
-    perfis: [],
-    dataCriacao: ''
+    id:          '',
+    nome:        '',
+    cpf:         '',
+    email:       '',
+    senha:       '',
+    perfis:      [],
+    dataCriacao: '',
   }
 
-  nome = new FormControl(null, [Validators.minLength(3)])
-  cpf = new FormControl(null, [Validators.required])
-  email = new FormControl(null, [Validators.email])
-  senha = new FormControl(null, [Validators.minLength(3)])
+  nome =  new FormControl(null, [Validators.minLength(3)]);
+  cpf =       new FormControl(null, [Validators.required]);
+  email =        new FormControl(null, [Validators.email]);
+  senha = new FormControl(null, [Validators.minLength(3)]);
 
   constructor(
-    private router: Router,
+    private router:          Router,
     private service: ClienteService,
     private message: MessageService,
-    private route: ActivatedRoute
+    private route:   ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class ClienteUpdateComponent implements OnInit {
 
   findById() {
     this.service.findById(this.cliente.id).subscribe(response => {
-      response.perfis = []
+      response.perfis = [];
       this.cliente = response;
     })
   }

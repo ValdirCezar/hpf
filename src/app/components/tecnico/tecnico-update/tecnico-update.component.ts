@@ -13,25 +13,25 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 export class TecnicoUpdateComponent implements OnInit {
 
   tecnico: Tecnico = {
-    id: '',
-    nome: '',
-    cpf: '',
-    email: '',
-    senha: '',
-    perfis: [],
-    dataCriacao: ''
+    id:          '',
+    nome:        '',
+    cpf:         '',
+    email:       '',
+    senha:       '',
+    perfis:      [],
+    dataCriacao: '',
   }
 
-  nome = new FormControl(null, [Validators.minLength(3)])
-  cpf = new FormControl(null, [Validators.required])
-  email = new FormControl(null, [Validators.email])
-  senha = new FormControl(null, [Validators.minLength(3)])
+  nome =  new FormControl(null, [Validators.minLength(3)]);
+  cpf =       new FormControl(null, [Validators.required]);
+  email =        new FormControl(null, [Validators.email]);
+  senha = new FormControl(null, [Validators.minLength(3)]);
 
   constructor(
-    private router: Router,
+    private router:          Router,
     private service: TecnicoService,
     private message: MessageService,
-    private route: ActivatedRoute
+    private route:   ActivatedRoute,
   ) { }
 
   ngOnInit(): void {

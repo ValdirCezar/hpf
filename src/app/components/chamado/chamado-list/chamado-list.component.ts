@@ -14,18 +14,18 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ChamadoListComponent implements OnInit {
 
-  chamados: Chamado[] = []
+  chamados: Chamado[] = [];
 
   displayedColumns: string[] = ['id', 'titulo', 'cliente', 'dataAbertura', 'prioridade', 'status', 'actions'];
-
+  
   dataSource = new MatTableDataSource<Chamado>(this.chamados);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
-    private service: ChamadoService,
+    private service:        ChamadoService,
     private clienteService: ClienteService,
-    private message: MessageService
+    private message:        MessageService,
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +36,6 @@ export class ChamadoListComponent implements OnInit {
     this.service.findAll().subscribe(response => {
       this.chamados = response;
       this.listaCliente();
-
       this.dataSource = new MatTableDataSource<Chamado>(this.chamados);
       this.dataSource.paginator = this.paginator;
     }, err => {

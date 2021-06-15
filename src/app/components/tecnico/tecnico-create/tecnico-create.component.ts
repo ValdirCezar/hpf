@@ -13,47 +13,45 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 export class TecnicoCreateComponent implements OnInit {
 
   tecnico: Tecnico = {
-    id: '',
-    nome: '',
-    cpf: '',
-    email: '',
-    senha: '',
-    perfis: [],
-    dataCriacao: ''
+    id:          '',
+    nome:        '',
+    cpf:         '',
+    email:       '',
+    senha:       '',
+    perfis:      [],
+    dataCriacao: '',
   }
 
-  nome = new FormControl(null, [Validators.minLength(3)])
-  cpf = new FormControl(null, [Validators.required])
-  email = new FormControl(null, [Validators.email])
-  senha = new FormControl(null, [Validators.minLength(3)])
+  nome =  new FormControl(null, [Validators.minLength(3)]);
+  cpf =       new FormControl(null, [Validators.required]);
+  email =        new FormControl(null, [Validators.email]);
+  senha = new FormControl(null, [Validators.minLength(3)]);
 
   constructor(
-    private router: Router,
+    private router:          Router,
     private service: TecnicoService,
-    private message: MessageService
+    private message: MessageService,
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   create() {
     this.service.create(this.tecnico).subscribe(response => {
       this.message.message('Técnico cadastrado com sucesso!!');
     }, err => {
-      console.log(err);
       this.message.message(err.error.error);
     })
   }
 
   cancel(): void {
-    this.router.navigate(['tecnicos'])
+    this.router.navigate(['tecnicos']);
   }
 
   addPerfil(perfil: any): void {
     if (!this.tecnico.perfis.includes(perfil))
-      this.tecnico.perfis.push(perfil)
+      this.tecnico.perfis.push(perfil);
     else
-      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1)
+      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
   }
 
   validaCampos(): boolean {

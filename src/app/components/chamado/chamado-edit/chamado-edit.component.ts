@@ -52,7 +52,6 @@ export class ChamadoEditComponent implements OnInit {
     this.chamado.id = this.route.snapshot.paramMap.get('id');
     this.service.findById(this.chamado.id).subscribe(resposta => {
       this.chamado = resposta;
-
       this.buscaTecnico();
       this.buscaCliente();
     }, err => {
@@ -92,24 +91,22 @@ export class ChamadoEditComponent implements OnInit {
   }
 
   retornaStatus() {
-    if(this.chamado.status == 0) {
+    if(this.chamado.status == 0) 
       return 'ABERTO'
-    }
 
-    if(this.chamado.status == 1) {
+    if(this.chamado.status == 1) 
       return 'EM ANDAMENTO'
-    }
+
     return 'ENCERRADO'
   }
 
   retornaPrioridade() {
-    if(this.chamado.prioridade == 0) {
+    if(this.chamado.prioridade == 0) 
       return 'BAIXA'
-    }
     
-    if(this.chamado.prioridade == 1) {
+    if(this.chamado.prioridade == 1) 
       return 'MÉDIA'
-    }
+    
     return 'ALTA'
   }
 

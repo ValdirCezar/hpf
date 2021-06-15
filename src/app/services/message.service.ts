@@ -8,7 +8,7 @@ export class MessageService {
 
   constructor(private snack: MatSnackBar) { }
 
-  message(msg: String): void {
+  message(msg: String) {
     this.snack.open(`${msg}`, 'OK', {
       duration: 5000,
       verticalPosition: 'top',

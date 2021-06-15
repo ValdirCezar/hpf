@@ -71,7 +71,7 @@ export class ChamadoCreateComponent implements OnInit {
     })
   }
 
-  validaCampos(): boolean {
+  validaCampos() {
     if (this.titulo.invalid || this.prioridade.invalid || this.status.invalid || this.tecnico.invalid
       || this.cliente.invalid || this.descricao.invalid) {
       return false;

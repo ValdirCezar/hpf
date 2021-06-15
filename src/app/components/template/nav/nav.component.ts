@@ -9,15 +9,18 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private storage: StorageService, private router: Router) { }
+  constructor(
+    private storage: StorageService, 
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
-    this.router.navigate(['/chamados/1'])
+    this.router.navigate(['home']);
   }
 
   logout() {
     this.storage.setLocalUser(null);
-    this.router.navigate(['login'])
+    this.router.navigate(['login']);
   }
 
 }

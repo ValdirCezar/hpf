@@ -16,11 +16,11 @@ import { Tecnico } from 'src/app/models/tecnico';
 })
 export class ChamadoReadComponent implements OnInit {
 
-  clientes: Cliente[] = []
-  tecnicos: Tecnico[] = []
+  clientes: Cliente[] = [];
+  tecnicos: Tecnico[] = [];
 
-  nomeDoTecnico: string = ''
-  nomeDoCliente: string = ''
+  nomeDoTecnico: string = '';
+  nomeDoCliente: string = '';
 
   chamado: Chamado = {
     prioridade: '',

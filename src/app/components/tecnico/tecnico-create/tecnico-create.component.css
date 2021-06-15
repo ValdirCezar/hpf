@@ -1,6 +1,8 @@
 .container {
   width: 25rem;
   margin: auto;
+  padding: 1rem 1rem 3rem 1rem;
+  border-radius: .6rem;
 }
 
 h1 {

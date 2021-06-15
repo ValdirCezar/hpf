@@ -12,20 +12,20 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ClienteDeleteComponent implements OnInit {
 
   cliente: Cliente = {
-    id: '',
-    nome: '',
-    cpf: '',
-    email: '',
-    senha: '',
-    perfis: [],
-    dataCriacao: ''
+    id:          '',
+    nome:        '',
+    cpf:         '',
+    email:       '',
+    senha:       '',
+    perfis:      [],
+    dataCriacao: '',
   }
 
   constructor(
-    private router: Router,
+    private router:          Router,
     private service: ClienteService,
     private message: MessageService,
-    private route: ActivatedRoute
+    private route:   ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ export class ClienteDeleteComponent implements OnInit {
     this.service.findById(this.cliente.id).subscribe(response => {
       console.log(response.senha);
       this.cliente = response;
-    })
+    });
   }
 
   delete() {
@@ -46,11 +46,11 @@ export class ClienteDeleteComponent implements OnInit {
       this.message.message("Cliente removido com sucesso");
     }, err => {
       this.message.message(err.error.error);
-    })
+    });
   }
 
-  cancel(): void {
-    this.router.navigate(['clientes'])
+  cancel() {
+    this.router.navigate(['clientes']);
   }
 
 }

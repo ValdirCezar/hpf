@@ -1,3 +1,4 @@
+import { MessageService } from './../services/message.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -16,22 +17,26 @@ export class LoginComponent implements OnInit {
     senha: ''
   }
 
-  email = new FormControl(null, Validators.email)
-  senha = new FormControl(null, Validators.minLength(3))
+  email =        new FormControl(null, Validators.email);
+  senha = new FormControl(null, Validators.minLength(3));
 
   constructor(
-    private service: AuthService,
-    private router: Router) { }
+    private service:    AuthService,
+    private router:          Router,
+    private message: MessageService,
+  ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   login() {
     this.service.authenticate(this.creds).subscribe(response => {
-      this.service.successfulLogin(response.headers.get('Authorization'))
-      this.router.navigate([''])
+      this.service.successfulLogin(response.headers.get('Authorization'));
+      this.router.navigate(['']);
     }, err => {
-      console.log('Error: ' + err);
+      if (err.error.match('inválido'))
+        this.message.message('Usuario ou senha inválidos');
+      else
+        this.message.message('Falha ao realizar login. Tente novamente');
     })
   }
 

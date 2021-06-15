@@ -1,6 +1,6 @@
 .login {
   height: 100%;
-  background: linear-gradient(0deg, rgba(5,246,249,1) 0%, rgba(45,94,253,1) 100%);
+  background: var(--azul-pricipal);
   display: flex;
   align-items: center;
   justify-content: center;

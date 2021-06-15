@@ -17,18 +17,26 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private storage: StorageService) { }
+    private storageService: StorageService
+    ) { }
 
-  isAuthenticated() : boolean {
-    let user = this.storage.getLocalUser();
-
-    if(user != null) {
-      return this.jwtService.isTokenExpired(user.token.toString()) ? false : true; 
+  /**
+   * Verifica se o usuário está autênticado
+   * @returns boolean
+   */
+  isAuthenticated(): boolean {
+    let user = this.storageService.getLocalUser();
+    if (user != null) {
+      return this.jwtService.isTokenExpired(user.token.toString()) ? false : true;
     }
-
     return false;
   }
 
+  /**
+   * Realiza a autênticação
+   * @param creds : Credenciais
+   * @returns Token JWT
+   */
   public authenticate(creds: Credenciais) {
     return this.http.post(`${this.BASE_URL}/login`, creds, {
       observe: 'response',
@@ -36,17 +44,27 @@ export class AuthService {
     });
   }
 
+  /**
+   * Se o usuário estiver autênticado este método 
+   * irá pegar o token e o email do token passado
+   * como parâmetro e irá setar um localUser no 
+   * localStorage
+   * @param authvalue Token
+   */
   successfulLogin(authvalue: String) {
-    let tok = authvalue.substring(7);
-    let user : LocalUser = {
-      token: tok,
-      email: this.jwtService.decodeToken(tok).sub
+    let user: LocalUser = {
+      token: authvalue.substring(7),
+      email: this.jwtService.decodeToken(authvalue.substring(7)).sub
     }
-    this.storage.setLocalUser(user);
+    this.storageService.setLocalUser(user);
   }
 
+  /**
+   * Realiza o logout do usuário removendo 
+   * os valores do localStorage
+   */
   logout() {
-    this.storage.setLocalUser(null)
+    this.storageService.setLocalUser(null)
   }
 
 }
