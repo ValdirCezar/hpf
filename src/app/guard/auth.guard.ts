@@ -20,7 +20,6 @@ export class AuthGuard implements CanActivate {
     if(authenticated) {
       return true;
     } else {
-      this.messageService.message("Sessão expirada");
       this.router.navigate(['login']);
       return false;
     }
