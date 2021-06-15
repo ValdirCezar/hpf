@@ -16,6 +16,8 @@ export class ChamadoListComponent implements OnInit {
 
   chamados: Chamado[] = [];
 
+  chamado: Chamado
+
   displayedColumns: string[] = ['id', 'titulo', 'cliente', 'dataAbertura', 'prioridade', 'status', 'actions'];
   
   dataSource = new MatTableDataSource<Chamado>(this.chamados);
@@ -33,6 +35,7 @@ export class ChamadoListComponent implements OnInit {
 
   public findAll(): void {
     this.service.findAll().subscribe(response => {
+
       this.chamados = response;
       this.dataSource = new MatTableDataSource<Chamado>(this.chamados);
       this.dataSource.paginator = this.paginator;

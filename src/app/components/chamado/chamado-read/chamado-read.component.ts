@@ -19,9 +19,6 @@ export class ChamadoReadComponent implements OnInit {
   clientes: Cliente[] = [];
   tecnicos: Tecnico[] = [];
 
-  nomeDoTecnico: string = '';
-  nomeDoCliente: string = '';
-
   chamado: Chamado = {
     prioridade:  '',
     status:      '',
@@ -51,8 +48,6 @@ export class ChamadoReadComponent implements OnInit {
     this.chamado.id = this.route.snapshot.paramMap.get('id');
     this.service.findById(this.chamado.id).subscribe(resposta => {
       this.chamado = resposta;
-      this.buscaTecnico();
-      this.buscaCliente();
     }, err => {
       this.messageService.message(err.error.error);
     })
@@ -80,7 +75,7 @@ export class ChamadoReadComponent implements OnInit {
     }
 
     if(this.chamado.status == 1) {
-      return 'EM ANDAMENTO'
+      return 'ANDAMENTO'
     }
     return 'ENCERRADO'
   }
@@ -94,22 +89,6 @@ export class ChamadoReadComponent implements OnInit {
       return 'MÉDIA'
     }
     return 'ALTA'
-  }
-
-  buscaTecnico() {
-    this.tecnicoService.findById(this.chamado.tecnico).subscribe(
-      resposta => {
-        this.nomeDoTecnico = resposta.nome;
-      }
-    )
-  }
-
-  buscaCliente() {
-    this.clienteService.findById(this.chamado.cliente).subscribe(
-      resposta => {
-        this.nomeDoCliente = resposta.nome;
-      }
-    )
   }
 
 }

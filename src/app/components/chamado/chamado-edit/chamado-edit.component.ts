@@ -95,7 +95,7 @@ export class ChamadoEditComponent implements OnInit {
       return 'ABERTO'
 
     if(this.chamado.status == 1) 
-      return 'EM ANDAMENTO'
+      return 'ANDAMENTO'
 
     return 'ENCERRADO'
   }

@@ -25,13 +25,13 @@
   </div>
 
   <mat-form-field class="full-width" appearance="outline">
-    <mat-label>Cliente: {{ nomeDoCliente }}</mat-label>
+    <mat-label>Cliente: {{ chamado.nomeCliente }}</mat-label>
     <mat-select disabled [(ngModel)]="chamado.cliente" class="select">
     </mat-select>
   </mat-form-field>
 
   <mat-form-field class="full-width" appearance="outline">
-    <mat-label>Técnico: {{ nomeDoTecnico }}</mat-label>
+    <mat-label>Técnico: {{ chamado.nomeTecnico }}</mat-label>
     <mat-select disabled [(ngModel)]="chamado.tecnico" class="select">
     </mat-select>
   </mat-form-field>
