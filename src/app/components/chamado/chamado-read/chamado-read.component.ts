@@ -23,12 +23,14 @@ export class ChamadoReadComponent implements OnInit {
   nomeDoCliente: string = '';
 
   chamado: Chamado = {
-    prioridade: '',
-    status:     '',
-    titulo:     '',
-    descricao:  '',
-    tecnico:    '',
-    cliente:    '',
+    prioridade:  '',
+    status:      '',
+    titulo:      '',
+    descricao:   '',
+    tecnico:     '',
+    cliente:     '',
+    nomeCliente: '',
+    nomeTecnico: '',
   }
 
   constructor(

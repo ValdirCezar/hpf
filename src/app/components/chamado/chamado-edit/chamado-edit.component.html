@@ -39,14 +39,14 @@
   </div>
 
   <mat-form-field class="full-width" appearance="outline">
-    <mat-label>Cliente: {{ nomeDoCliente }}</mat-label>
+    <mat-label>Cliente: {{ chamado.nomeCliente }}</mat-label>
     <mat-select disabled [(ngModel)]="chamado.cliente" class="select">
       <mat-option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{ cliente.nome }}</mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field class="full-width" appearance="outline">
-    <mat-label>Técnico: {{ nomeDoTecnico }}</mat-label>
+    <mat-label>Técnico: {{ chamado.nomeTecnico }}</mat-label>
     <mat-select [(ngModel)]="chamado.tecnico" class="select">
       <mat-option *ngFor="let tecnico of tecnicos" value="{{ tecnico.id }}">{{ tecnico.nome }}</mat-option>
     </mat-select>

@@ -23,9 +23,8 @@ export class ChamadoListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
-    private service:        ChamadoService,
-    private clienteService: ClienteService,
-    private message:        MessageService,
+    private service: ChamadoService,
+    private message: MessageService,
   ) { }
 
   ngOnInit(): void {
@@ -35,19 +34,10 @@ export class ChamadoListComponent implements OnInit {
   public findAll(): void {
     this.service.findAll().subscribe(response => {
       this.chamados = response;
-      this.listaCliente();
       this.dataSource = new MatTableDataSource<Chamado>(this.chamados);
       this.dataSource.paginator = this.paginator;
     }, err => {
       this.message.message(err.error.error);
-    })
-  }
-
-  listaCliente(): void {
-    this.chamados.forEach(x => {
-      this.clienteService.findById(x.cliente).subscribe(response => {
-        x.cliente = response.nome;
-      })
     })
   }
 
@@ -64,7 +54,7 @@ export class ChamadoListComponent implements OnInit {
     if(x == '0')
       return 'ABERTO'
     else if (x =='1')
-      return 'EM ANDAMENTO'
+      return 'ANDAMENTO'
     else
       return 'ENCERRADO'
   }

@@ -23,12 +23,14 @@ export class ChamadoEditComponent implements OnInit {
   nomeDoCliente: string = ''
 
   chamado: Chamado = {
-    prioridade: '',
-    status:     '',
-    titulo:     '',
-    descricao:  '',
-    tecnico:    '',
-    cliente:    '',
+    prioridade:  '',
+    status:      '',
+    titulo:      '',
+    descricao:   '',
+    tecnico:     '',
+    cliente:     '',
+    nomeCliente: '',
+    nomeTecnico: '',
   }
 
   titulo:     FormControl = new FormControl(null, [Validators.required])
@@ -52,8 +54,6 @@ export class ChamadoEditComponent implements OnInit {
     this.chamado.id = this.route.snapshot.paramMap.get('id');
     this.service.findById(this.chamado.id).subscribe(resposta => {
       this.chamado = resposta;
-      this.buscaTecnico();
-      this.buscaCliente();
     }, err => {
       this.messageService.message(err.error.error);
     })
@@ -108,22 +108,6 @@ export class ChamadoEditComponent implements OnInit {
       return 'MÉDIA'
     
     return 'ALTA'
-  }
-
-  buscaTecnico() {
-    this.tecnicoService.findById(this.chamado.tecnico).subscribe(
-      resposta => {
-        this.nomeDoTecnico = resposta.nome;
-      }
-    )
-  }
-
-  buscaCliente() {
-    this.clienteService.findById(this.chamado.cliente).subscribe(
-      resposta => {
-        this.nomeDoCliente = resposta.nome;
-      }
-    )
   }
 
 }

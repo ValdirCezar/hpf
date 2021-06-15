@@ -20,12 +20,14 @@ export class ChamadoCreateComponent implements OnInit {
   tecnicos: Tecnico[] = []
 
   chamado: Chamado = {
-    prioridade: '',
-    status:     '',
-    titulo:     '',
-    descricao:  '',
-    tecnico:    '',
-    cliente:    '',
+    prioridade:  '',
+    status:      '',
+    titulo:      '',
+    descricao:   '',
+    tecnico:     '',
+    cliente:     '',
+    nomeCliente: '',
+    nomeTecnico: '',
   }
 
   prioridade: FormControl = new FormControl(null, [Validators.required])
