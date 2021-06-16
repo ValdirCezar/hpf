@@ -1,7 +1,6 @@
 .create {
   width: 90%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
 }
 
 .create h1 {
@@ -16,8 +15,7 @@
 
 .container {
   width: 90%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
 }
 
 table {
@@ -33,10 +31,12 @@ table th, td {
   margin-left: 5%;
 }
 
-#view {
-  color: rgb(112, 112, 112);
+#edit {
+  color: rgb(255, 0, 0);
+  opacity: .4;
 }
 
-#edit {
-  color: rgb(112, 112, 112);
+#view {
+  color: rgb(0, 195, 255);
+  opacity: .4;
 }

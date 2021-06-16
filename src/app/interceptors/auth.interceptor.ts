@@ -14,8 +14,6 @@ import { StorageService } from '../services/storage.service';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  jwtHelper: JwtHelperService = new JwtHelperService();
-
   constructor(
     private storage:       StorageService, 
     public messageService: MessageService, 

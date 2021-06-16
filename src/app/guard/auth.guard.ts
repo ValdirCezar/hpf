@@ -11,7 +11,6 @@ export class AuthGuard implements CanActivate {
   constructor(
     private router:                 Router, 
     private service:           AuthService, 
-    private messageService: MessageService,
     ){ }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {

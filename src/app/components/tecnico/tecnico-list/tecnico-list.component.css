@@ -31,8 +31,10 @@ table {
 
 #edit {
   color: rgb(0, 195, 255);
+  opacity: .8;
 }
 
 #delete {
   color: rgba(255, 0, 0, 0.795);
+  opacity: .8;
 }
