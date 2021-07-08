@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://helpdesk-valdir.herokuapp.com'
+  baseUrl: 'https://hp-prod.herokuapp.com/'
 };
 
 /*
